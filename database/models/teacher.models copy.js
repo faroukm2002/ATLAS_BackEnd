@@ -86,8 +86,16 @@ city:{
     finished_date: {
         type: Date
     },
+     
+
+
+    // subject:{
+    //     type:Schema.ObjectId,
+    //     ref:"subject",
+    //     required:true,
+    //   },
  
-});
+},{timeStamp:true});
 
 export const teacherModel=model('teacher',teacherSchema)
  

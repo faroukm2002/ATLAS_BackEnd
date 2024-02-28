@@ -1,4 +1,4 @@
-import { teacherModel } from "../../../database/models/teacher.models.js"
+import { teacherModel } from "../../../database/models/teacher.models copy.js"
 import { AppError } from "../../utils/AppError.js"
 import { catchError } from "../../utils/catchError.js"
 import { deleteOne } from "../handlers/refactor.js"
