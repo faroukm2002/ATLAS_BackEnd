@@ -1,6 +1,7 @@
 import { teacherModel } from "../../../database/models/teacher.models.js"
 import { AppError } from "../../utils/AppError.js"
 import { catchError } from "../../utils/catchError.js"
+import { deleteOne } from "../handlers/refactor.js"
 
 const addTeacher = catchError(async(req,res,next) => {
     // let teachers=await teacherModel.findOne({email:req.body.email})
@@ -40,18 +41,7 @@ const updateTeacher= catchError(async(req,res,next)=>{
 )
 
 
- const deleteTeacher=  catchError(async(req,res,next)=>{
-    const{id}=req.params
-    const teacher= await teacherModel.findByIdAndDelete(id) //{}
-
-
-      //!{}==false
-    !teacher && next(new AppError('teacher not found',404))
-   
-    teacher &&   res.status(201).json({message:"Done",teacher})
- 
-
-  })
+ const deleteTeacher= deleteOne(teacherModel,"Teacher")
 
 
 
