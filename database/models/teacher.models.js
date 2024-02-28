@@ -5,20 +5,20 @@ const teacherSchema = new Schema({
     // personal information
     firstname:{
             type:String,
-            required:true,
+            required: [true, 'firstname is required'],
             trim:true,
+            min: [2, 'minimum length 2 char'],
+            max: [20, 'max length 2 char']
     },
    lastname:{
         type:String,
-        required:true,
-        trim:true,
-},  
-  email:{
-    type:String,
-    unique:true,
-    required:true,
-    trim:true,
-},
+        required: [true, 'lastname is required'],
+            trim:true,
+            min: [2, 'minimum length 2 char'],
+            max: [20, 'max length 2 char']
+        },
+
+
 phone:{
     type:Number,
     unique:true,
@@ -45,6 +45,26 @@ placeOfBirth:{
     trim:true,
 }, 
 
+
+// email: {
+//     type: String,
+//     unique: [true, 'email must be unique value'],
+//     required: [true, 'email is required'],
+// },
+// password: {
+//     type: String,
+//     required: [true, 'password is required'],
+// },
+// role: {
+//     type: String,
+//     enum:['admin','teacher'],
+//     default:'techer',
+//     required: [true, 'role is required'],
+
+    
+// },
+
+
 // Education Information
 university:{
     type:String,
@@ -62,23 +82,7 @@ city:{
     required:true,
     trim:true,
 },
-    // ed_qualification_id: {
-    //     type: String,
-    //     required: true
-    // },
-    // ed_speciality_id: {
-    //     type: String,
-    //     required: true
-    // },
-    // Institute_id: {
-    //     type: String
-    // },
-    // institute: {
-    //     type: String
-    // },
-    // reference_no: {
-    //     type: String
-    // },
+
 
     started_date: {
         type: Date
@@ -92,7 +96,6 @@ city:{
     // subject:{
     //     type:Schema.ObjectId,
     //     ref:"subject",
-    //     required:true,
     //   },
  
 },{timeStamp:true});

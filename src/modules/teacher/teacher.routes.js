@@ -9,7 +9,7 @@ teacherRouter.route('/')
 .post(teacher.addTeacher)
 .get(teacher.getAllteachers)
 
-
+// teacherRouter.get('/profile',teacher.GetTeacherProfile)
 teacherRouter.route('/:id')
 .get(teacher.getTeacherByID)
 .put(teacher.updateTeacher)
