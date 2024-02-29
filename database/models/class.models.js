@@ -1,6 +1,6 @@
 import { Schema,Types,model } from "mongoose"
 
-const subjectSchema = new Schema({
+const classSchema = new Schema({
     
     name:{
             type:String,
@@ -17,37 +17,26 @@ const subjectSchema = new Schema({
         min: [2, 'minimum length 2 char'],
         max: [1000, 'max length 2 char']
 },
-duration: {
-    type: String,
-    required: [true, 'duration is required'],
-    default: "3 months"
-},
 
 createdby: {
     type: Schema.Types.ObjectId,
     ref: 'admin',
     // required: true
 },
-updatedBy: {
-    type: Schema.Types.ObjectId,
-    ref: 'Admin',
-},
+
 teachers: {
     type: Schema.Types.ObjectId,
     ref: 'teacher',
 },
-academicterm: {
+
+subjects: {
     type: Schema.Types.ObjectId,
-    ref: 'Academicterm',
-},
-programId: {
-    type: Schema.Types.ObjectId,
-    ref: 'program',
+    ref: 'subject',
 },
 
 
  
 },{timeStamp:true});
 
-export const subjectModel=model('subject',subjectSchema)
+export const classModel=model('class',classSchema)
  
