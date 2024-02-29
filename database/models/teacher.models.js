@@ -55,14 +55,14 @@ placeOfBirth:{
 //     type: String,
 //     required: [true, 'password is required'],
 // },
-// role: {
-//     type: String,
-//     enum:['admin','teacher'],
-//     default:'techer',
-//     required: [true, 'role is required'],
+role: {
+    type: String,
+    enum:['admin','teacher'],
+    default:'techer',
+    // required: [true, 'role is required'],
 
     
-// },
+},
 
 
 // Education Information
