@@ -93,10 +93,10 @@ city:{
      
 
 
-    // subject:{
-    //     type:Schema.ObjectId,
-    //     ref:"subject",
-    //   },
+    subject:{
+        type:Schema.ObjectId,
+        ref:"subject",
+      },
  
 },{timeStamp:true});
 

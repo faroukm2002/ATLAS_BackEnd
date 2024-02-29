@@ -14,6 +14,7 @@ const addteachervalidation = Joi.object({
   city: Joi.string().min(2).max(50).required(),
   started_date: Joi.date(),
   finished_date: Joi.date(),
+  subject: Joi.string()
 });
 
 const updateteaherValidation = Joi.object({
@@ -32,7 +33,8 @@ const updateteaherValidation = Joi.object({
     degree: Joi.string(),
     city: Joi.string(),
     started_date: Joi.date(),
-    finished_date: Joi.date()
+    finished_date: Joi.date(),
+    
   })
 
 const deleteteacherValidation = Joi.object({

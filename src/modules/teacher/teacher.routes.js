@@ -1,7 +1,7 @@
 import express from 'express';
 import *as teacher from './teacher.controller.js';
 import validate from '../../middleware/validate.js';
-import { addteachervalidation, updateteaherValidation } from './teacher.validation.js';
+import { addteachervalidation, deleteteacherValidation, updateteaherValidation } from './teacher.validation.js';
 
 const teacherRouter=express.Router();
 
@@ -15,6 +15,6 @@ teacherRouter.route('/')
 teacherRouter.route('/:id')
 .get(teacher.getTeacherByID)
 .put(validate(updateteaherValidation), teacher.updateTeacher)
-.delete(teacher.deleteTeacher)
+.delete(validate(deleteteacherValidation),teacher.deleteTeacher)
 
 export default teacherRouter
