@@ -18,9 +18,6 @@ const addteachervalidation = Joi.object({
 });
 
 const updateteaherValidation = Joi.object({
-   
-    id: Joi.string().hex().length(24).required() 
-  },{
     firstname: Joi.string().min(2).max(20),
     lastname: Joi.string().min(2).max(20),
     phone: Joi.number(),
@@ -34,8 +31,11 @@ const updateteaherValidation = Joi.object({
     city: Joi.string(),
     started_date: Joi.date(),
     finished_date: Joi.date(),
+    id: Joi.string().hex().length(24).required() 
+  }
+   
     
-  })
+  )
 
 const deleteteacherValidation = Joi.object({
     id:Joi.string().hex().length(24).required()

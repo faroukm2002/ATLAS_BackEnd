@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-const addteachervalidation = Joi.object({
+const addSubjectsvalidation = Joi.object({
   name: Joi.string().min(2).max(20).required(),
   description: Joi.string().min(2).max(1000).required(),
   duration: Joi.string().default("3 months"),
@@ -8,22 +8,23 @@ const addteachervalidation = Joi.object({
 
 });
 
-const updateteaherValidation = Joi.object({
+const updateSubjectValidation = Joi.object({
    
-    id: Joi.string().hex().length(24).required() 
-  },{
+    id: Joi.string().hex().length(24).required(), 
     name: Joi.string().min(2).max(20),
     description: Joi.string().min(2).max(1000),
     duration: Joi.string(),
+  }
+    
 
-  })
+  )
 
-const deleteteacherValidation = Joi.object({
+const deleteSubjectsValidation = Joi.object({
     id:Joi.string().hex().length(24).required()
 })
 
 export { 
-  addteachervalidation,
-  updateteaherValidation,
-  deleteteacherValidation
+  addSubjectsvalidation,
+  updateSubjectValidation,
+  deleteSubjectsValidation
 };
